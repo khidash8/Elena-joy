@@ -1,0 +1,333 @@
+/* ! Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  font-size: 62.5%;
+  --header1: calc(2rem + 1vw);
+  --header2: calc(3.5rem + 1vw);
+  --header3: calc(3rem + 1vw);
+  --header4: calc(2.4rem + 1vw);
+  --text: calc(1.5rem + 1vw);
+  --big: calc(6rem + 1vw);
+  --special-color: #906272;
+  --bg-color: #414141;
+  --bg-color-transparent: #4141417e;
+  --gray-text: #525252;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Ruhl-regular", sans-serif;
+  animation: Fade-in 2s ease;
+}
+h1 {
+  font-size: var(--header1);
+}
+h2 {
+  font-size: var(--header2);
+}
+h3 {
+  font-size: var(--header3);
+}
+h4 {
+  font-size: var(--header4);
+}
+li,
+button,
+label,
+input,
+p,
+a {
+  font-size: var(--text);
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+ul {
+  list-style: none;
+}
+
+/* * Place holders */
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* * Fonts */
+@font-face {
+  font-family: "Ruhl-regular";
+  src: url("/fonts/FrankRuhlLibre-Regular.ttf");
+}
+@font-face {
+  font-family: "Ruhl-Medium";
+  src: url("/fonts/FrankRuhlLibre-Medium.ttf");
+}
+@font-face {
+  font-family: "Vibes";
+  src: url("/fonts/GreatVibes-Regular.ttf");
+}
+
+/* ! Header Section */
+.main-head {
+  background-color: #dad1d4;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  position: relative;
+  min-height: 10vh;
+  position: sticky;
+  top: 0;
+}
+.main-head nav {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 2rem 0;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 20rem;
+}
+#logo {
+  flex: 2 1 20rem;
+  font-family: "vibes", sans-serif;
+}
+
+/* ! Hero Section */
+.hero-section {
+  display: flex;
+  min-height: 90vh;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+/* * intro */
+.hero-introduction {
+  text-align: center;
+  width: 90%;
+  margin: 0 0 0 5%;
+  flex: 2 1 40rem;
+}
+.hero-introduction h2 {
+  padding: 2rem 2rem;
+}
+.hero-introduction p {
+  padding: 3rem 8rem;
+}
+.hero-introduction a {
+  padding: 3rem 8rem;
+  border: 2px solid black;
+  margin: 2rem 0;
+}
+
+/* * images */
+.hero-images {
+  flex: 1 1 40rem;
+  background: linear-gradient(#dad8dd, #dad1d4);
+  position: relative;
+  z-index: 1;
+}
+.hero-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* * plants */
+.plant {
+  position: absolute;
+  bottom: 0;
+  left: -20%;
+  z-index: -1;
+  transform-origin: bottom;
+  animation: plant-animation 3s infinite 1s alternate-reverse ease;
+  max-height: 80%;
+}
+.plant2 {
+  left: 40%;
+}
+
+/* ! About Section */
+.about {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+/* * about-image */
+.about-image {
+  flex: 1 1 30rem;
+  position: relative;
+}
+.about-image h4 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 2rem;
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* * about-text */
+.about-text {
+  flex: 2 1 40rem;
+  text-align: center;
+  background: var(--bg-color);
+  color: white;
+}
+.about-text div {
+  /* justify-content: space-around; */
+  padding: 5rem 10rem;
+  text-align: left;
+}
+.about-text h2 {
+  padding-top: 12rem;
+  font-family: "vibes", sans-serif;
+}
+
+/* ! Gallery Section - GRID */
+.gallery {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  position: relative;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg-color-transparent);
+  color: white;
+  padding: 3rem 25rem;
+  text-align: center;
+}
+
+/* ! Contact Section */
+.contact {
+  min-height: 80vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact img {
+  flex: 1 1 40rem;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.form-wrapper {
+  flex: 3 1 40rem;
+}
+.form-wrapper label {
+  display: block;
+  margin: 2rem 0;
+}
+.form-wrapper input {
+  background-color: var(--bg-color);
+  color: white;
+  padding: 1rem 2rem;
+}
+.form-wrapper button {
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem;
+  margin: 2rem 0rem;
+  background-color: var(--special-color);
+  color: white;
+}
+.form-wrapper span {
+  font-size: var(--big);
+  color: var(--special-color);
+}
+
+/* ! Footer Section */
+.footer {
+  min-height: 10vh;
+  background-color: var(--bg-color);
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+.footer h2 {
+  font-size: calc(0.8rem + 1vw);
+  flex: 4 1 40rem;
+}
+.footer ul {
+  flex: 1 1 40rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ! Animations */
+/* * Genral Animations */
+@keyframes Fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* * Plant Animations */
+@keyframes plant-animation {
+  from {
+    transform: rotatez(-10deg);
+  }
+  to {
+    transform: rotatez(0deg);
+  }
+}
+
+/* ! Media Queries */
+@media screen and (max-width: 842px) {
+  .hero-introduction {
+    width: 100%;
+  }
+  .hero-introduction h2 {
+    padding: 2rem 0rem;
+  }
+  .hero-introduction p {
+    padding: 1rem 1rem;
+  }
+
+  .about-text div {
+    padding: 3rem 5rem;
+  }
+
+  .gallery-head {
+    display: none;
+  }
+
+  .contact img {
+    display: none;
+  }
+
+  .footer h2 {
+    order: 2;
+    padding: 2rem;
+    text-align: center;
+  }
+  .footer ul {
+    order: 1;
+  }
+}
